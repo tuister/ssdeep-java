@@ -46,6 +46,8 @@ public interface FuzzyLibrary extends Library {
     /**
      * Computes the match score between two fuzzy hash signatures.
      *
+     * @param sig1 fuzzy hash 1
+     * @param sig2 fuzzy hash 2
      * @return Returns a value from zero to 100 indicating the match score of the
      * two signatures. A match score of zero indicates the signatures
      * did not match. When an error occurs, such as if one of the

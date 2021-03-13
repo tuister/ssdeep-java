@@ -11,7 +11,7 @@ import java.nio.file.Paths;
  */
 public class Fuzzy {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         if (args == null || args.length == 0) {
             System.out.println("Usage: java -jar ssdeep-java.jar path");
@@ -24,7 +24,7 @@ public class Fuzzy {
                 System.out.println(arg + ": Is a directory");
             } else {
                 String s = FuzzyHashing.fuzzyHashFilename(arg);
-                System.out.println(s + ",\"" + arg + "\"");
+                System.out.println(s + ",\"" + path.toFile().getCanonicalPath() + "\"");
             }
         }
 

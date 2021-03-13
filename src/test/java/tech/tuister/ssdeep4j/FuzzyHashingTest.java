@@ -33,8 +33,6 @@ public class FuzzyHashingTest implements TestData {
 
 
         System.out.println(Utils.stripEndZero(result));
-
-
     }
 
     @Test
