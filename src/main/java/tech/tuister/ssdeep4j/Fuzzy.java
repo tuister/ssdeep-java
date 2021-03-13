@@ -14,7 +14,7 @@ public class Fuzzy {
     public static void main(String[] args) {
 
         if (args == null || args.length == 0) {
-            System.out.println("Usage: java -jar ssdeep.jar path");
+            System.out.println("Usage: java -jar ssdeep-java.jar path");
             System.exit(-1);
         }
 
