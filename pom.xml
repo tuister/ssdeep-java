@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
     <groupId>tech.tuister</groupId>
     <artifactId>ssdeep-java</artifactId>
     <version>0.0.1</version>
@@ -18,8 +24,24 @@
     </developers>
 
     <issueManagement>
-        <!--        <url></url>-->
+        <system>github</system>
+        <url>https://github.com/tuister/ssdeep-java/issues</url>
     </issueManagement>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:tuister/ssdeep-java.git</url>
+        <connection>scm:git:git@github.com:tuister/ssdeep-java.git</connection>
+        <developerConnection>scm:git:git@github.com:tuister/ssdeep-java.git</developerConnection>
+    </scm>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -62,6 +84,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib</classpathPrefix>
                             <mainClass>tech.tuister.ssdeep4j.Fuzzy</mainClass>
                         </manifest>
                     </archive>
@@ -96,6 +119,26 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
