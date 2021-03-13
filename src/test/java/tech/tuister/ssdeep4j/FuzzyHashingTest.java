@@ -4,11 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import tech.tuister.ssdeep4j.util.Utils;
 
-import java.io.File;
 import java.io.IOException;
 
-public class FuzzyHashingTest implements TestData{
-
+public class FuzzyHashingTest implements TestData {
 
 
     @Test

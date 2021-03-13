@@ -1,18 +1,9 @@
 package tech.tuister.ssdeep4j.util;
 
-import com.ochafik.lang.jnaerator.runtime.MangledFunctionMapper;
-import com.sun.jna.FunctionMapper;
-import com.sun.jna.Library;
-import com.sun.jna.Platform;
-import com.sun.jna.win32.StdCallFunctionMapper;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author tuister 2021/3/13 10:22
