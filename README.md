@@ -18,7 +18,7 @@ ssdeep-java is a JNA wrapper for SSDeep(Fuzzy hashing)
 ```java
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         byte[] text = Utils.readFile(new File("/tmp/test.doc"));
         String hash = FuzzyHashing.fuzzyHash(text);
         System.out.println(hash);
